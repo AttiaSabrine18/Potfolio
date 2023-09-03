@@ -1,0 +1,203 @@
+/*===== GOOGLE FONTS=====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/*===== VARIABLES CSS=====*/
+:root{
+  --header-height: 3rem; 
+  /* === colors === */ 
+  --base-color:hsl(353,100%,65%);
+  --title-color : hsl(244,24%,26%);
+  --text-color : hsl(244,16%,43%);
+  --body-color : hsl(258,60%,98%);
+  --container-color: #fff ; 
+  --body-font:'Poppins', sans-serif;
+
+
+  /* ===fonts-size ===*/
+  --big-font-size : 3.5rem ;
+  --h1-font-size : 2.25rem ;
+  --h2-font-size : 1.5rem ; 
+  --h3-font-size:1.25rem ; 
+  --normal-font-size: 1rem ;
+  --small-font-size : 0.875rem ; 
+  --smaller-font-size : 0.813rem ; 
+
+  /* === fonts-weight === */
+  --font-normal : 500 ;
+  --font-medium : 600 ;
+  --font-semi-bold : 700 ;
+
+  /* === box shadow ==== */ 
+  --shadow : 0px 5px 20px rgb(69 67 97 /10%);
+
+  /* === Margins bottom === */ 
+   --mb-s : 0.25rem ; 
+   --mb-l: 0.5rem ; 
+   --mb-x:0.75rem ;
+   --mb-xlm: 1;
+   --mb-xlmn: 1.5rem ;
+   --mb-xlmm : 2rem ; 
+   --mb-xlmz : 2.5rem ;
+   --mb-xlmb : 3 ;
+
+   /*=== z-index === */ 
+
+   --z-tooltip : 10;
+   --z-fixed:100 ;
+   --z-modal : 1000;
+
+
+   
+
+}
+/* === Responsive typography === */
+@media screen and  (max-width : 992px){
+
+  :root{
+    --big-font-size : 2.75rem ;
+    --h1-font-size : 1.5rem ;
+    --h2-font-size : 1.25rem ; 
+    --h3-font-size:1rem ; 
+    --normal-font-size: 0.938rem ;
+    --small-font-size : 0.813rem ; 
+    --smaller-font-size : 0.75rem ; 
+  }
+}
+
+
+/* === BASE === */ 
+*{
+  margin: 0% ;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior:smooth;
+}
+
+body, 
+button,
+input,
+textarea{
+  font-family: var(--body-font) ;
+  font-size: var(--normal-font-size);
+}
+
+body{
+  background-color:var(--body-color) ;
+  color: var(--text-color);
+
+}
+h1,h2, h3 {
+ color: var(--title-color) ;
+ font-weight: var(--font-semi-bold);
+
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration:none ;
+}
+
+button{
+  cursor: pointer ;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+}
+
+/*=== REUSABLE CSS CLASSES == */ 
+
+
+.section {
+  padding: 6rem  0 2rem 0 ;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  font-weight:var(--font-semi-bold) ;
+  color : var(--title-color) ;
+  position: relative;
+  margin-bottom: 7.75rem;  
+}
+
+.section__subtitle{
+  display: block;
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+/*=== LAYOUT === */
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.grid {
+  display: grid;
+}
+
+
+
+/*=== BUTTONS === */
+
+
+.btn{
+  padding: 0.75rem 2rem ;
+  line-height: 1;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 1px rgb(0 0 0/0%);
+  border: 1px solid transparent;
+  color: #fff;
+  display: inline-block;
+  background-color: var(--base-color);
+  font-weight: var(--font-semi-bold);
+
+}
+.btn:hover{
+  animation : button-push 0.3s linear 1;
+}
+
+
+@keyframes button-push {
+
+  50%{
+      transform: scale(0.8);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
+/*=== BREAKPOINTS === */
+@media screen and  (max-width : 992px){
+  .container{
+    margin : 0 var(--mb-xlmm) 0 var(--mb-xlmm) ;
+  }
+  .button{
+    padding: 1rem 1.75rem;
+
+  }
+  .button__icon{
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and  (max-width : 768px){
+}
+@media screen and  (max-width : 576px){
+}
+@media screen and  (max-width : 350px){
+  .container{
+    margin : 0 var(--mb-xlm) 0 var(--mb-xlm) ;
+  }
+}
